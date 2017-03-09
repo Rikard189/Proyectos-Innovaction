@@ -13,12 +13,14 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Registrarse", about_path%></li>
-        <li><a href="#">Iniciar Sesion</a></li>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+
+    <div class="navbar-text pull-right">
+    <% if user_signed_in? %>
+    <%= link_to current_user.name + " " + current_user.last_name, edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to '<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>'.html_safe, destroy_user_session_path,clase:'btn btn-default', method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+    <%= link_to "Registarse", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Iniciar Sesion", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
   </div><!-- /.container-fluid -->
 </nav>
