@@ -5,5 +5,9 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def _home_signin
+
+  end
+
 
 end

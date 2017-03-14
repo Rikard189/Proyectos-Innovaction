@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       }
   root 'static_pages#home'
   get '/about',to: "static_pages#about"
+  get '/home_signin', to: "static_pages#_home_signin"
 
 
 
