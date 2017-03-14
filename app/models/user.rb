@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+<<<<<<< HEAD
 
+=======
+  enum access_level: [:estudiante , :profesor, :admin]
+>>>>>>> modeling-user
 end
