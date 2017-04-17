@@ -1,1 +1,9 @@
-<h1>HOLA</h1>
+<%= stylesheet_link_tag "static_pages" %>
+
+<%if current_user.profesor? %>
+  <h1 id="welcome">Bienvenido Profesor <%=current_user.last_name%></h1>
+<%elsif current_user.estudiante?%>
+  <h1 id="welcome">Bienvenido Alumno</h1>
+<%else%>
+  <h1 id="welcome">Bienvenido Admin <%=current_user.last_name%> </h1>
+<%end%>

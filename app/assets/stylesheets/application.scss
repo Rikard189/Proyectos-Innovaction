@@ -17,3 +17,25 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+  background-color: #11496b;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-link {
+    color: white;
+}
+
+.navbar-brand {
+   float: left;
+   margin-right: 10px;
+   font-size: 1.7em;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: -1px;
+   font-weight: bold;
+}
