@@ -33,11 +33,14 @@ hr.style-one {
 
 
 footer {
-    background-color: #11496b;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    overflow:hidden;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+height: 30px;
+}
+
+.wrapper{
+position:relative;
+height:auto;
 }
