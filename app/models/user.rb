@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum access_level: [:estudiante , :profesor, :admin]
+  has_many :proyectos
 
 end
