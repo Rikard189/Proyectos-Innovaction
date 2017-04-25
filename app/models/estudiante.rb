@@ -1,2 +1,4 @@
 class Estudiante < User
+
+
 end
