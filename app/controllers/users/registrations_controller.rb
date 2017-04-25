@@ -1,6 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
+before_filter :init_attachment, only: [:new, :edit]
+before_action !assign_role, :only => :create
+
 
   # GET /resource/sign_up
   # def new
@@ -35,6 +38,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+
+  private
+  def assign_role
+    if @user.nomina[0,1] == "A"
+      @user.access_level ="estudiante"
+    elsif @user.nomina[0,1] == "L"
+      @user.access_level ="profesor"
+    end
+  end
 
   # protected
 
