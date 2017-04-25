@@ -8,4 +8,7 @@
   <h1 id="welcome">Bienvenido Admin <%=current_user.last_name%> </h1>
 <%end%>
 
-<h2><%= link_to "Registrate Ahora!", new_user_registration_path, :class => 'btn btn-primary btn-lg'  %> </h2>
+<h2><%= link_to "Empieza a crear tu proyecto! ", new_proyecto_path, :class => 'btn btn-primary btn-lg'  %>
+  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+</h2>
