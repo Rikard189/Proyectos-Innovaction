@@ -1,3 +1,5 @@
 class Proyecto < ApplicationRecord
-  has_and_belongs_to_many :users
+  has_many :usuario_proyectos
+  has_many :users, through: :usuario_proyectos
+
 end
