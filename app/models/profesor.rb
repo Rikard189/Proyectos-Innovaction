@@ -1,3 +1,2 @@
-class Profesor < User
-  
+class Profesor < ApplicationRecord
 end
