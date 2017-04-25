@@ -39,14 +39,7 @@ before_action !assign_role, :only => :create
   #   super
   # end
 
-  private
-  def assign_role
-    if @user.nomina[0,1] == "A"
-      @user.access_level ="estudiante"
-    elsif @user.nomina[0,1] == "L"
-      @user.access_level ="profesor"
-    end
-  end
+
 
   # protected
 
