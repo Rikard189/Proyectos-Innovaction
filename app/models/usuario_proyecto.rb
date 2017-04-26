@@ -1,0 +1,2 @@
+class UsuarioProyecto < ApplicationRecord
+end
