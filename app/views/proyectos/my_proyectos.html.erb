@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1> My Proyectos </h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>alcance</th>
+      <th>descripcion</th>
+      <th>unidades</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proyectos.each do |proyecto| %>
+      <tr>
+        <td><%= proyecto.nombre %></td>
+        <td><%= proyecto.alcance %></td>
+        <td><%= proyecto.descripcion %></td>
+        <td><%= proyecto.unidaes %></td>
+        <td><%= link_to 'Show', proyecto %></td>
+        <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
+        <td><%= link_to 'Delete', proyecto, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
