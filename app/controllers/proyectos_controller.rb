@@ -19,7 +19,6 @@ class ProyectosController < ApplicationController
 
   def create
     @proyecto = Proyecto.new(proyecto_params)
-    @proyecto.user = current_user
     if @proyecto.save
       redirect_to @proyecto
     else
