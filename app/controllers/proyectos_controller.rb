@@ -1,12 +1,18 @@
 class ProyectosController < ApplicationController
+  before_action :set_proyecto, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @proyectos = Proyecto.all
   end
 
   def show
-    @proyecto = Proyecto.find(params[:id])
 
+
+  end
+
+  def my_proyectos
+    @proyectos = current_user.proyectos
   end
 
   def new
@@ -45,8 +51,14 @@ class ProyectosController < ApplicationController
   end
 
   private
+
+    def set_proyecto
+      @proyecto = Proyecto.find(params[:id])
+
+    end
+
     def proyecto_params
-      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades)
+      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id)
     end
 
 end
