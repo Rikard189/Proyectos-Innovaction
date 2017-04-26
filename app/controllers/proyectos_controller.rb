@@ -11,7 +11,6 @@ class ProyectosController < ApplicationController
 
   def new
     @proyecto = Proyecto.new
-    @proyecto.user = current_user
   end
 
   def edit
