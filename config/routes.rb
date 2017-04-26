@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :proyectos
+  resources :proyectos do
+    get :my_proyectos
+  end
+
+  resources :users do
+    resources :proyectos
+  end
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
