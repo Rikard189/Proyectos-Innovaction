@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
-  resources :proyectos do
-    get :my_proyectos
-  end
+  resources :proyectos
 
-  resources :users do
-    resources :proyectos
-  end
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  devise_for :users
   root 'static_pages#home'
   get '/about',to: "static_pages#about"
   get '/home_signin', to: "static_pages#_home_signin"
+  get 'my_proyectos', to: 'proyectos#my_proyectos'
 
 
 
