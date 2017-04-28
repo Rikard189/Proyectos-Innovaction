@@ -58,7 +58,7 @@ class ProyectosController < ApplicationController
     end
 
     def proyecto_params
-      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id)
+      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id, :image)
     end
 
 end

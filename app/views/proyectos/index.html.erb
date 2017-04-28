@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "static_pages" %>
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1> Mis Proyectos </h1>
+
+  <% @proyectos.each do |proyecto| %>
+
+  <div class="col-sm-6 col-md-4">
+  <div class="">
+    <div class="thumbnail">
+      <%= image_tag proyecto.image_url, width: '100%', height: '100%'%>
+      <div class="caption">
+        <h3><%= proyecto.nombre %></h3>
+        <p><%=proyecto.descripcion %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Mostrar</a> <a href="#" class="btn btn-default" role="button">Editar</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%end%>
+
+</div>

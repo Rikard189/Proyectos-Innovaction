@@ -1,27 +1,53 @@
-<h1>CREAR PROYECTO</h1>
 
-<%= form_for :proyecto,url: proyectos_path do  |f| %>
-  <p>
-    <%= f.label :nombre_de_proyecto %><br>
-    <%= f.text_field :nombre %>
-  </p>
+<div class="container">
+  <h1>CREAR PROYECTO</h1>
 
-  <p>
-    <%= f.label :alcance %><br>
-    <%= f.text_field :alcance %>
-  </p>
+  <%= form_for :proyecto,url: proyectos_path do  |f| %>
+    <p>
+      <%= f.label :nombre_de_proyecto %><br>
+      <%= f.text_field :nombre %>
+    </p>
 
-  <p>
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
-  </p>
+    <p>
+      <%= f.label :alcance %><br>
+      <%= f.text_field :alcance %>
+    </p>
 
-  <p>
-    <%= f.label :unidades %><br>
-    <%= f.number_field :unidades %>
-  </p>
+    <p>
+      <%= f.label :descripcion %><br>
+      <%= f.text_area :descripcion %>
+    </p>
 
-  <p>
-    <%=f.submit "Crear Proyecto"%>
-  </p>
-<% end %>
+    <p>
+      <%= f.label :unidades %><br>
+      <%= f.number_field :unidades %>
+    </p>
+
+    <p>
+      <%= f.label :tipo, "Tipo  de Proyecto" %>
+      <%= f.text_field :tipo, list: "tipos" %>
+
+      <datalist id="tipos">
+        <option value="Proyecto Integrador I">
+        <option value="Proyecto Integrador II">
+        <option value="Proyecto Integrador">
+        <option value="Proyecto Semana i">
+        <option value="Proyecto Semestre i">
+        <option value="Proyecto de Curso">
+        <option value="Proyecto No Academico">
+      </datalist>
+    </p>
+
+    <p>
+
+      <%= f.label :image, "Imagen Promocional" %><br>
+      <%= f.file_field :image %>
+
+    </p>
+
+    <p>
+      <%=f.submit "Crear Proyecto"%>
+    </p>
+  <% end %>
+
+</div>

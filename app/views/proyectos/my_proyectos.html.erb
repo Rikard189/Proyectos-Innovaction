@@ -1,29 +1,25 @@
-<%= stylesheet_link_tag "static_pages" %>
+  <%= stylesheet_link_tag "static_pages" %>
 
-<div class="container">
-  <p id="notice"><%= notice %></p>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
 
-  <h1> My Proyectos </h1>
+    <h1> Mis Proyectos </h1>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+    <% @proyectos.each do |proyecto| %>
 
-    <tbody>
-      <% @proyectos.each do |proyecto| %>
-        <tr>
-          <td><%= proyecto.nombre %></td>
-          <td><%= link_to 'Mostrar', proyecto %></td>
-          <td><%= link_to 'Editar', edit_proyecto_path(proyecto) %></td>
-          <td><%= link_to 'Borrar Proyect', proyecto, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="col-sm-6 col-md-4">
+    <div class="">
+      <div class="thumbnail">
+        <%= image_tag proyecto.image_url, width: '100%', height: '100%'%>
+        <div class="caption">
+          <h3><%= proyecto.nombre %></h3>
+          <p><%=proyecto.descripcion %></p>
+          <p><a href="#" class="btn btn-primary" role="button">Mostrar</a> <a href="#" class="btn btn-default" role="button">Editar</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <%end%>
 
-</div>
+  </div>
