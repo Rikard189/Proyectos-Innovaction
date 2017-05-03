@@ -7,8 +7,10 @@ class ProyectosController < ApplicationController
   end
 
   def show
+    @proyecto = Proyecto.find(params[:id])
+  end
 
-
+  def show_my_proyecto
   end
 
   def my_proyectos
@@ -46,7 +48,7 @@ class ProyectosController < ApplicationController
   def destroy
     @proyecto = Proyecto.find(params[:id])
     @proyecto.destroy
-    redirect_to proyectos_path
+    redirect_to my_proyectos_path
 
   end
 
@@ -58,7 +60,7 @@ class ProyectosController < ApplicationController
     end
 
     def proyecto_params
-      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id, :image)
+      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id, :image, :tipo, atributo_ids:[])
     end
 
 end

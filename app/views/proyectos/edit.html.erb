@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>EDITAR PROYECTO</h1>
+
+  <%= form_for :proyecto,url: proyectos_path do  |f| %>
+    <p>
+      <%= f.label :nombre_de_proyecto %><br>
+      <%= f.text_field :nombre %>
+    </p>
+
+    <p>
+      <%= f.label :alcance %><br>
+      <%= f.text_field :alcance %>
+    </p>
+
+    <p>
+      <%= f.label :descripcion %><br>
+      <%= f.text_area :descripcion %>
+    </p>
+
+    <p>
+      <%= f.label :unidades %><br>
+      <%= f.number_field :unidades %>
+    </p>
+
+    <p>
+      <%= f.label :tipo, "Tipo de Proyecto" %><br>
+      <%= f.select :tipo, ["Proyecto Integrador I","Proyecto Integrador II","Proyecto Integrador", "Proyecto Semana i", "Proyecto Semestre i", "Proyecto de Curso", "Proyecto No Academico"] %>
+    </p>
+
+    <p>
+
+      <%= f.label :image, "Imagen Promocional" %><br>
+      <%= f.file_field :image %>
+      <%= image_tag @proyecto.image_url, width: '40%', height: '40%'%>
+
+    </p>
+    <br>
+    <p>
+      <%=f.submit "Guardar Proyecto", :class => 'btn btn-success'%>
+    </p>
+  <% end %>
+
+  <%= link_to 'Regresar', my_proyectos_path, :class => "btn btn-info" %>
+
+</div>

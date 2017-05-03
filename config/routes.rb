@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atributos
   resources :proyectos
 
   devise_for :users

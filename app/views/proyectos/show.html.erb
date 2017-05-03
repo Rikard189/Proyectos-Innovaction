@@ -1,21 +1,26 @@
-<p>
-  <strong>Nombre de Proyecto:</strong>
-  <%= @proyecto.nombre %>
-</p>
+<div class="container">
+  <p>
+    <strong>Nombre de Proyecto:</strong>
+    <%= @proyecto.nombre %>
+  </p>
 
-<%= image_tag @proyecto.image_url, width: '20%', height: '20%'%>
+  <%= image_tag @proyecto.image_url, width: '50%', height: '50%'%>
 
-<p>
-  <strong>Tipo de Proyecto:</strong>
-  <%= @proyecto.tipo%>
-</p>
+  <p>
+    <strong>Tipo de Proyecto:</strong>
+    <%= @proyecto.tipo%>
+  </p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @proyecto.descripcion %>
-</p>
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @proyecto.descripcion %>
+  </p>
 
-<p>
-  <strong>Alcance:</strong>
-  <%= @proyecto.alcance %>
-</p>
+  <p>
+    <strong>Alcance:</strong>
+    <%= @proyecto.alcance %>
+  </p>
+
+  <%= link_to 'Regresar', proyectos_path, :class => "btn btn-info" %>
+
+</div>
