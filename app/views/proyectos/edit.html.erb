@@ -1,45 +1,69 @@
 <div class="container">
-  <h1>EDITAR PROYECTO</h1>
-
+  <h1>Editar Proyecto</h1>
+  <br>
   <%= form_for :proyecto,url: proyectos_path do  |f| %>
-    <p>
-      <%= f.label :nombre_de_proyecto %><br>
+  <div class="col-xs-4">
+    <div>
+      <%= f.label "Nombre de Proyecto:" %><br>
       <%= f.text_field :nombre %>
-    </p>
-
-    <p>
-      <%= f.label :alcance %><br>
-      <%= f.text_field :alcance %>
-    </p>
-
-    <p>
-      <%= f.label :descripcion %><br>
-      <%= f.text_area :descripcion %>
-    </p>
-
-    <p>
-      <%= f.label :unidades %><br>
-      <%= f.number_field :unidades %>
-    </p>
-
-    <p>
-      <%= f.label :tipo, "Tipo de Proyecto" %><br>
-      <%= f.select :tipo, ["Proyecto Integrador I","Proyecto Integrador II","Proyecto Integrador", "Proyecto Semana i", "Proyecto Semestre i", "Proyecto de Curso", "Proyecto No Academico"] %>
-    </p>
-
-    <p>
-
-      <%= f.label :image, "Imagen Promocional" %><br>
-      <%= f.file_field :image %>
-      <%= image_tag @proyecto.image_url, width: '40%', height: '40%'%>
-
-    </p>
+    </div>
     <br>
-    <p>
-      <%=f.submit "Guardar Proyecto", :class => 'btn btn-success'%>
-    </p>
-  <% end %>
+    <div>
+      <%= f.label "Alcance:" %><br>
+      <%= f.text_field :alcance %>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Descripcion:" %><br>
+      <%= f.text_area :descripcion %>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Unidades:" %><br>
+      <%= f.number_field :unidades %>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Tipo de Proyecto:"%><br>
+      <%= f.select :tipo, ["Proyecto Integrador I","Proyecto Integrador II","Proyecto Integrador", "Proyecto Semana i", "Proyecto Semestre i", "Proyecto de Curso", "Proyecto No Academico"] %>
+    </div>
 
-  <%= link_to 'Regresar', my_proyectos_path, :class => "btn btn-info" %>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="field">
+      <%= f.label "Atributos:" %><br />
+      <%= f.collection_check_boxes :atributo_ids, Atributo.all, :id, :nombre do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= f.label "Estatus del Proyectp:"%><br>
+      <%= f.select :estatus, ["Descubrimiento","Build Up","Start Up", "Scale Up"] %>
+    </div>
+
+    <div>
+      <%= f.label :image, "Imagen Promocional:" %><br>
+      <%= f.file_field :image %>
+    </div>
+    <br>
+  </div>
+  <div class="col-xs-4">
+    <div class="">
+        <%= link_to 'Agregar Alumno', new_proyecto_estudiante_path(@proyecto), :class => 'btn btn-default' %>
+    </div>
+    <br>
+    <div>
+      <%=f.submit "Guardar Proyecto", :class => 'btn btn-success'%>
+    </div>
+  </div>
+
+
+
+    <% end %>
 
 </div>

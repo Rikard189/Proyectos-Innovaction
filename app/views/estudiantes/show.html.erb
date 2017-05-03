@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @estudiante.nombre + @estudiante.apellido %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @estudiante.matricula %>
+</p>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @estudiante.carrera %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @estudiante.email %>
+</p>
+
+
+<p>
+  <strong>ID DE PROYECTO:</strong>
+  <%= @estudiante.proyecto_id %>
+</p>
+
+<%= link_to 'Edit', edit_proyecto_estudiante_path(@estudiante) %> |
+<%= link_to 'Back', proyecto_estudiantes_path %>

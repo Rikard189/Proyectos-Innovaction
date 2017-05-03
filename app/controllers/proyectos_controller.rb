@@ -37,7 +37,6 @@ class ProyectosController < ApplicationController
 
   def update
     @proyecto = Proyecto.find(params[:id])
-
     if @proyecto.update(article_params)
       redirect_to @proyecto
     else
@@ -60,7 +59,7 @@ class ProyectosController < ApplicationController
     end
 
     def proyecto_params
-      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id, :image, :tipo, atributo_ids:[])
+      params.require(:proyecto).permit(:nombre,:alcance,:descripcion,:unidades, :user_id, :image, :estatus, :tipo, atributo_ids:[])
     end
 
 end

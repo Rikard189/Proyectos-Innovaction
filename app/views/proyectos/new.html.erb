@@ -1,34 +1,39 @@
 
 <div class="container">
   <h1>CREAR PROYECTO</h1>
-
+  <br>
   <%= form_for :proyecto,url: proyectos_path do  |f| %>
-    <p>
-      <%= f.label :nombre_de_proyecto %><br>
+  <div class="col-xs-6">
+    <div>
+      <%= f.label "Nombre de Proyecto:" %><br>
       <%= f.text_field :nombre %>
-    </p>
-
-    <p>
-      <%= f.label :alcance %><br>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Alcance:" %><br>
       <%= f.text_field :alcance %>
-    </p>
-
-    <p>
-      <%= f.label :descripcion %><br>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Descripcion:" %><br>
       <%= f.text_area :descripcion %>
-    </p>
-
-    <p>
-      <%= f.label :unidades %><br>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Unidades:" %><br>
       <%= f.number_field :unidades %>
-    </p>
-
-    <p>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Tipo de Proyecto:"%><br>
       <%= f.select :tipo, ["Proyecto Integrador I","Proyecto Integrador II","Proyecto Integrador", "Proyecto Semana i", "Proyecto Semestre i", "Proyecto de Curso", "Proyecto No Academico"] %>
-    </p>
+    </div>
 
+  </div>
+
+  <div class="col-xs-6">
     <div class="field">
-      <%= f.label "Atributos" %><br />
+      <%= f.label "Atributos:" %><br />
       <%= f.collection_check_boxes :atributo_ids, Atributo.all, :id, :nombre do |b| %>
       <div class="collection-check-box">
         <%= b.check_box %>
@@ -38,13 +43,24 @@
     </div>
 
     <div>
-      <%= f.label :image, "Imagen Promocional" %><br>
+      <%= f.label "Estatus del Proyectp:"%><br>
+      <%= f.select :estatus, ["Descubrimiento","Build Up","Start Up", "Scale Up"] %>
+    </div>
+
+    <div>
+      <%= f.label :image, "Imagen Promocional:" %><br>
       <%= f.file_field :image %>
     </div>
     <br>
+
+
     <div>
       <%=f.submit "Crear Proyecto", :class => 'btn btn-success'%>
     </div>
-  <% end %>
+
+  </div>
+
+
+    <% end %>
 
 </div>

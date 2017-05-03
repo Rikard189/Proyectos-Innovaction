@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   resources :atributos
-  resources :proyectos
-
+  resources :proyectos do
+    resources :estudiantes
+  end
   devise_for :users
   root 'static_pages#home'
   get '/about',to: "static_pages#about"
   get '/home_signin', to: "static_pages#_home_signin"
   get 'my_proyectos', to: 'proyectos#my_proyectos'
+
 
 
 

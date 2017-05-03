@@ -1,4 +1,4 @@
-class Estudiante < User
-
+class Estudiante < ApplicationRecord
+  belongs_to :proyecto
 
 end

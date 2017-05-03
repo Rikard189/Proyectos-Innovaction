@@ -1,0 +1,45 @@
+<div class="container">
+  <%= form_for [proyecto, estudiante] do |f| %>
+    <% if estudiante.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+
+        <ul>
+        <% estudiante.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div >
+      <%= f.label "Nombre: " %><br>
+      <%= f.text_field :nombre %>
+    </div>
+    <br>
+    <div >
+      <%= f.label "Apellido: " %><br>
+      <%= f.text_field :apellido %>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Matricula: " %><br>
+      <%= f.text_field :matricula%>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Email: " %><br>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <br>
+    <div>
+      <%= f.label "Carrera: " %><br>
+      <%= f.text_field :carrera %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Crear Alumno", :class => 'btn btn-success' %>
+    </div>
+  <% end %>
+
+
+</div>
